@@ -23,6 +23,10 @@ function monitorarRequisicoes(request, response, next) {
 
 app.use('/disciplinas', monitorarRequisicoes);
 
+app.get('/', (request, response) => {
+    return response.json({message: 'Olá, mundo!'});
+});
+
 app.post('/disciplinas', uploadMiddleware.single('avatar'), (request, response) => {
 
     const body = request.body;
